@@ -22,3 +22,5 @@ y = np.log1p(df['GDP (current US$)'])
 model = XGBRegressor(random_state=42)
 score = cross_val_score(model,X,y,cv=5,scoring='r2')
 print(f"R^2 Score with Cross Validation : {np.mean(score):.4f}")
+
+df.to_csv("gdp_predictions.csv",index=False)

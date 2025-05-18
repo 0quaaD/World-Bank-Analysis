@@ -27,5 +27,5 @@ model.fit(X, y)
 y_pred_log = model.predict(X)
 y_pred = np.expm1(y_pred_log) 
 df['Predicted GDP (current US$)'] = y_pred
-df['Model Error'] = df['GDP (current US$)'] - df['Predicted GDP (current US$)']
+df['Model Error %'] = 100 * (df['GDP (current US$)'] - df['Predicted GDP (current US$)']) / df['GDP (current US$)']
 df.to_csv("gdp_predictions.csv",index=False)
